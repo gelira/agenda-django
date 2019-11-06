@@ -1,8 +1,11 @@
 from django.shortcuts import reverse
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, TemplateView
 
 from . models import Pessoa, Telefone
 from . forms import PessoaForm, TelefoneForm
+
+class InicioView(TemplateView):
+    template_name = 'core/inicio.html'
 
 class ListaContatosView(ListView):
     model = Pessoa
