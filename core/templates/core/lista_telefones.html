@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h1>Telefones de {{ pessoa }}</h1>
+    <div class="list-group">
+        {% for t in telefones %}
+            <a href="#" class="list-group-item list-group-item-action">{{ t }}</a>
+        {% empty %}
+            <a href="#" class="list-group-item list-group-item-action">Nenhum telefone encontrado</a>
+        {% endfor %}
+    </div>
+    <div class="menu-container">
+        <a href="#" class="btn btn-primary" role="button">Cadastrar telefone</a>
+    </div>
+{% endblock conteudo %}
