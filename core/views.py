@@ -1,6 +1,8 @@
-from django.views.generic import ListView
+from django.shortcuts import reverse
+from django.views.generic import ListView, CreateView
 
 from . models import Pessoa, Telefone
+from . forms import PessoaForm
 
 class ListaContatosView(ListView):
     model = Pessoa
@@ -20,3 +22,10 @@ class ListaTelefonesView(ListView):
         ctx = super().get_context_data(**kwargs)
         ctx['pessoa'] = self.pessoa
         return ctx
+
+class CadastrarContatoView(CreateView):
+    form_class = PessoaForm
+    template_name = 'core/form_contato.html'
+
+    def get_success_url(self):
+        return reverse('core:lista')

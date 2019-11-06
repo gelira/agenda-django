@@ -6,5 +6,6 @@ app_name = 'core'
 
 urlpatterns = [
     path('lista', views.ListaContatosView.as_view(), name='lista'),
-    path('<int:pk>', views.ListaTelefonesView.as_view(), name='telefones'),
+    path('cadastro', views.CadastrarContatoView.as_view(), name='cadastro_contato'),
+    path('telefones/<int:pk>', views.ListaTelefonesView.as_view(), name='telefones'),
 ]
