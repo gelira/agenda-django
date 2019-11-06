@@ -11,7 +11,7 @@ class Telefone(models.Model):
     pessoa = models.ForeignKey(
         to=Pessoa,
         on_delete=models.CASCADE,
-        related_name='telefone'
+        related_name='telefones'
     )
 
     def __str__(self):
