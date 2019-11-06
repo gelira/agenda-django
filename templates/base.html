@@ -20,10 +20,12 @@
       <div class="menu-container">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a class="btn btn-primary" role="button" href="#">Lista de contatos</a>
+            <a class="btn btn-primary" role="button" 
+              href="{% url 'core:lista' %}">Lista de contatos</a>
           </li>
           <li class="list-inline-item">
-            <a class="btn btn-primary" role="button" href="#">Cadastrar contatos</a>
+            <a class="btn btn-primary" role="button"
+              href="{% url 'core:cadastro_contato' %}">Cadastrar contatos</a>
           </li>
         </ul>
       </div>

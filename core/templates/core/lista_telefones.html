@@ -10,6 +10,7 @@
         {% endfor %}
     </div>
     <div class="menu-container">
-        <a href="#" class="btn btn-primary" role="button">Cadastrar telefone</a>
+        <a class="btn btn-primary" role="button"
+            href="{% url 'core:cadastro_telefone' pk=pessoa.id %}">Cadastrar telefone</a>
     </div>
 {% endblock conteudo %}
