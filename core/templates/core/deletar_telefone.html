@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+  <h2>Deletar telefone</h2>
+  <p>Deseja realmente deletar o telefone {{ telefone }} de {{ telefone.pessoa }}?</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Deletar</button>
+    <a href="{% url 'core:telefones' pk=telefone.pessoa_id %}"
+      class="btn btn-primary">Cancelar</a>
+  </form>
+{% endblock conteudo %}
