@@ -4,7 +4,8 @@
     <h1>Telefones de {{ pessoa }}</h1>
     <div class="list-group">
         {% for t in telefones %}
-            <a href="#" class="list-group-item list-group-item-action">{{ t }}</a>
+            <a class="list-group-item list-group-item-action"
+              href="{% url 'core:atualizar_telefone' pk=t.id%}" >{{ t }}</a>
         {% empty %}
             <a href="#" class="list-group-item list-group-item-action">Nenhum telefone encontrado</a>
         {% endfor %}

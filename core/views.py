@@ -52,3 +52,11 @@ class AtualizarContatoView(generic.UpdateView):
     form_class = PessoaForm
     template_name = 'core/atualizar_contato.html'
     success_url = reverse_lazy('core:lista')
+
+class AtualizarTelefoneView(generic.UpdateView):
+    model = Telefone
+    form_class = TelefoneForm
+    template_name = 'core/atualizar_telefone.html'
+
+    def get_success_url(self):
+        return reverse('core:telefones', kwargs={'pk': self.object.pessoa_id})
