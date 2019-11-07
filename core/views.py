@@ -1,5 +1,4 @@
-from django.shortcuts import reverse
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views import generic
 
 from . models import Pessoa, Telefone
@@ -29,9 +28,7 @@ class ListaTelefonesView(GetPessoaMixin, generic.ListView):
 class CadastrarContatoView(generic.CreateView):
     form_class = PessoaForm
     template_name = 'core/form_contato.html'
-
-    def get_success_url(self):
-        return reverse('core:lista')
+    success_url = reverse_lazy('core:lista')
 
 class CadastrarTelefoneView(GetPessoaMixin, generic.CreateView):
     template_name = 'core/form_telefones.html'
