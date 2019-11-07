@@ -2,6 +2,8 @@
 
 {% block conteudo %}
   <h2>Telefones de {{ pessoa }}</h2>
+  <p>Criado em: {{ pessoa.created|date:"d/m/Y" }} {{ pessoa.created|time:"H:i:s" }}</p>
+  <p>Atualizado em: {{ pessoa.updated|date:"d/m/Y" }} {{ pessoa.updated|time:"H:i:s" }}</p>
   <div class="list-group">
     {% for t in telefones %}
       <a class="list-group-item list-group-item-action"

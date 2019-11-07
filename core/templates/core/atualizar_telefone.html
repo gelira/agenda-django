@@ -2,6 +2,8 @@
 
 {% block conteudo %}
   <h2>Atualizar telefone</h2>
+  <p>Criado em: {{ telefone.created|date:"d/m/Y" }} {{ telefone.created|time:"H:i:s" }}</p>
+  <p>Atualizado em: {{ telefone.updated|date:"d/m/Y" }} {{ telefone.updated|time:"H:i:s" }}</p>
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
