@@ -20,6 +20,10 @@
           <a href="{% url 'core:atualizar_contato' pk=pessoa.id %}"
             class="btn btn-primary" role="button">Atualizar contato</a>
         </li>
+        <li class="list-inline-item">
+          <a href="{% url 'core:deletar_contato' pk=pessoa.id %}"
+            class="btn btn-danger" role="button">Deletar contato</a>
+        </li>
       </ul>
     </div>
 {% endblock conteudo %}
