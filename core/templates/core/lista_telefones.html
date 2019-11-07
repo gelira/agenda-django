@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <h1>Telefones de {{ pessoa }}</h1>
-    <div class="list-group">
-        {% for t in telefones %}
-            <a class="list-group-item list-group-item-action"
-              href="{% url 'core:atualizar_telefone' pk=t.id%}" >{{ t }}</a>
-        {% empty %}
-            <a href="#" class="list-group-item list-group-item-action">Nenhum telefone encontrado</a>
-        {% endfor %}
-    </div>
-    <div class="menu-container">
-      <ul class="list-inline">
-        <li class="list-inline-item">
-            <a href="{% url 'core:cadastro_telefone' pk=pessoa.id %}"
-              class="btn btn-primary" role="button">Cadastrar telefone</a>
-        </li>
-        <li class="list-inline-item">
-          <a href="{% url 'core:atualizar_contato' pk=pessoa.id %}"
-            class="btn btn-primary" role="button">Atualizar contato</a>
-        </li>
-        <li class="list-inline-item">
-          <a href="{% url 'core:deletar_contato' pk=pessoa.id %}"
-            class="btn btn-danger" role="button">Deletar contato</a>
-        </li>
-      </ul>
-    </div>
+  <h2>Telefones de {{ pessoa }}</h2>
+  <div class="list-group">
+    {% for t in telefones %}
+      <a class="list-group-item list-group-item-action"
+        href="{% url 'core:atualizar_telefone' pk=t.id%}" >{{ t }}</a>
+    {% empty %}
+      <a href="#" class="list-group-item list-group-item-action">Nenhum telefone encontrado</a>
+    {% endfor %}
+  </div>
+  <div class="menu-container">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="{% url 'core:cadastro_telefone' pk=pessoa.id %}"
+          class="btn btn-primary" role="button">Cadastrar telefone</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="{% url 'core:atualizar_contato' pk=pessoa.id %}"
+          class="btn btn-primary" role="button">Atualizar contato</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="{% url 'core:deletar_contato' pk=pessoa.id %}"
+          class="btn btn-danger" role="button">Deletar contato</a>
+      </li>
+    </ul>
+  </div>
 {% endblock conteudo %}

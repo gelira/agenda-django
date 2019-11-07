@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <h1>Cadastrar contato</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
+  <h1>Cadastrar contato</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+    <a class="btn btn-danger" role="button"
+      href="{% url 'core:lista' %}">Cancelar</a>
+  </form>
 {% endblock conteudo %}

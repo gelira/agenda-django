@@ -5,7 +5,7 @@
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Atualizar</button>
+    <button type="submit" class="btn btn-success">Atualizar</button>
     <a class="btn btn-danger" role="button"
       href="{% url 'core:deletar_telefone' pk=telefone.id %}">Deletar</a>
   </form>

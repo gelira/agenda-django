@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <h1>Lista de contatos</h1>
-    <div class="list-group">
-        {% for p in pessoas %}
-            <a class="list-group-item list-group-item-action"
-                href="{% url 'core:telefones' pk=p.id %}">{{ p }}</a>
-        {% empty %}
-            <a class="list-group-item list-group-item-action">Nenhum contato encontrado</a>
-        {% endfor %}
-    </div>
+  <h2>Lista de contatos</h2>
+  <div class="list-group">
+    {% for p in pessoas %}
+      <a class="list-group-item list-group-item-action"
+        href="{% url 'core:telefones' pk=p.id %}">{{ p }}</a>
+    {% empty %}
+      <a class="list-group-item list-group-item-action">Nenhum contato encontrado</a>
+    {% endfor %}
+  </div>
 {% endblock conteudo %}

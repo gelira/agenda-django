@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <h1>Cadastrar telefone para {{ pessoa }}</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
+  <h1>Cadastrar telefone para {{ pessoa }}</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+    <a href="{% url 'core:telefones' pk=pessoa.id %}"
+      class="btn btn-danger" role="button">Cancelar</a>
+  </form>
 {% endblock conteudo %}
