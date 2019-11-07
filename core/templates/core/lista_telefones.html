@@ -10,7 +10,15 @@
         {% endfor %}
     </div>
     <div class="menu-container">
-        <a class="btn btn-primary" role="button"
-            href="{% url 'core:cadastro_telefone' pk=pessoa.id %}">Cadastrar telefone</a>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+            <a href="{% url 'core:cadastro_telefone' pk=pessoa.id %}"
+              class="btn btn-primary" role="button">Cadastrar telefone</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="{% url 'core:atualizar_contato' pk=pessoa.id %}"
+            class="btn btn-primary" role="button">Atualizar contato</a>
+        </li>
+      </ul>
     </div>
 {% endblock conteudo %}
