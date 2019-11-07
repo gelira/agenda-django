@@ -60,6 +60,7 @@ class AtualizarTelefoneView(generic.UpdateView):
     model = Telefone
     form_class = TelefoneForm
     template_name = 'core/atualizar_telefone.html'
+    context_object_name = 'telefone'
 
     def get_success_url(self):
         return reverse('core:telefones', kwargs={'pk': self.object.pessoa_id})

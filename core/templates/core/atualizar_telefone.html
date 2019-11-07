@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <h1>Atualizar telefone</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Atualizar</button>
-        <a class="btn btn-danger" role="button"
-          href="{% url 'core:deletar_telefone' pk=telefone.id %}">Deletar</a>
-    </form>
+  <h2>Atualizar telefone</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+    <a class="btn btn-danger" role="button"
+      href="{% url 'core:deletar_telefone' pk=telefone.id %}">Deletar</a>
+  </form>
 {% endblock conteudo %}
